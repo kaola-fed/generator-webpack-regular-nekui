@@ -1,0 +1,65 @@
+<header class="g-hd">
+  <h1 class="m-logo f-fl">
+    <div class="logo_bd">
+      <div class="logo_img f-fl">
+        <img style="height: 42px" src="//haitao.nos.netease.com/fb11aa98-5098-4048-a4ad-1e10b78e8864.svg" alt="logo">
+      </div>
+      <!-- @todo 请替换为工程名称 -->
+      <div class="logo_titleWrap f-fl">
+        <h1 class="logo_title">考拉 | 供应商管理系统</h1>
+        <p class="logo_viceTitle">中国最大的进口电商平台</p>
+      </div>
+    </div>
+  </h1>
+
+  <div class="m-hdInfo f-fr">
+      <div class="hdInfo_item hdInfo_item-user" on-mouseenter="{showSettings = true}" on-mouseleave="{showSettings = false}">
+          <i class="hdInfo_icon icon icon-my"></i>个人中心
+          {#if showSettings}
+          <ul class="hdInfo_dropdown animated"
+              r-animation="on:enter;class:fadeInY;on:leave;class:fadeOutY;"
+              on-mouseenter="{this.stopPropagation($event)}">
+            <li class="hdInfo_dropdownItem">
+              <p class="f-toe">
+                <i class="icon icon-my f-mr10"></i><span class="f-toe">kaola</span>
+              </p>
+            </li>
+            <li class="hdInfo_dropdownItem">
+              <a class="f-toe" href="javascript:;"><i class="icon icon-mail f-mr10"></i>建议与反馈</a>
+            </li>
+            <li class="hdInfo_dropdownItem">
+              <a class="f-toe" href="javascript:;"><i class="icon icon-sitting f-mr10"></i>修改密码</a>
+            </li>
+            <li class="hdInfo_dropdownItem ">
+              <a class="f-toe" href="/supplier/logout"><i class="icon icon-lock f-mr10"></i>退出</a>
+            </li>
+          </ul>
+          {/if}
+      </div>
+      <!-- @todo 如果不需要，可以删除 -->
+      <div class="hdInfo_item hdInfo_item-service">
+          <i class="hdInfo_icon icon icon-service"></i>在线服务
+      </div>
+      <!-- @todo 如果不需要，可以删除 -->
+      <div class="hdInfo_item">
+        <span class="hdInfo_lang">CN</span>
+      </div>
+  </div>
+</header>
+
+<kl-sidebar menus={menus} top="60px" bodyEl="J_page_body" isHide={isHide} router={this.$state}/>
+
+{#if sidebarReady}
+<div id="J_page_body" class="g-bd animated" fadeIn>
+   <div class="g-bdc">
+     <div r-view></div>
+   </div>
+  <footer class="g-ft">
+    <p class="f-tac">本系统由网易无尾熊（杭州）科技有限公司提供技术支持</p>
+  </footer>
+</div>
+{#else}
+<kl-loading visible />
+{/if}
+
+
