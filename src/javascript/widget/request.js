@@ -12,6 +12,8 @@
 import util from './util';
 import { KLModal, KLLoading } from 'nek-ui';
 
+const baseUrl = '/api';
+
 const loadingHandler = (options, loading) => {
     const { mask, btn } = options;
     if (loading) {
@@ -51,7 +53,7 @@ const request = (url, options) => {
     
     loadingHandler(options, true);
 
-    fetch(url, reqOpt)
+    fetch(baseUrl + url, reqOpt)
         .then(res => res.json())
         .then((json) => {
             loadingHandler(options, false);

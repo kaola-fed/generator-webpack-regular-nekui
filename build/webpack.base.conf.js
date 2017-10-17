@@ -19,7 +19,7 @@ module.exports = {
   output: {
     path: OUTPUT_PATH,
     filename: PROD ? 'javascript/[name].[hash].js' : 'javascript/[name].js', 
-    publicPath: '/'
+    publicPath: '/static/'
   },
   resolve: {
     extensions: ['.js', '.less', '.json'],
@@ -43,7 +43,7 @@ module.exports = {
         include: [resolve('src')],
         options: {
           formatter: require('eslint-friendly-formatter')
-        }
+        } 
       },
       { test: /\.ftl$/, loader: 'html-loader' },
       { test: /\.html$/, loader: 'raw-loader' },

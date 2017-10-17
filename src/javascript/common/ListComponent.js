@@ -58,7 +58,7 @@ export default BaseComponent.extend({
             KLNotify.error(json.message);
         }
 
-        const result = json.data;
+        const result = json.result;
         const list = result.list || [];
 
         this.data.total = result.total;
