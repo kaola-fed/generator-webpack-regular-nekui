@@ -1,0 +1,1 @@
+# generator-webpack-regular-nekui
