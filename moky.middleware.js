@@ -25,7 +25,8 @@ module.exports = (app, options, render, async) => {
     });
 
     // handle fallback for HTML5 history API
-    app.use(require('koa-connect-history-api-fallback')({
+    // only works with proxy mode
+    !options.env && app.use(require('koa-connect-history-api-fallback')({
         index: webpackConfig.output.publicPath + '/index.html',
         htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
         verbose: true
